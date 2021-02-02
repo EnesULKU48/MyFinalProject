@@ -18,7 +18,7 @@ namespace DataAccess.Concrete.InMemory
              new Product{CategoryId=3, ProductId=2, ProductName="Telefon", UnitPrice=1500, UnitsInStock=2},
              new Product{CategoryId=4, ProductId=2, ProductName="Klavye", UnitPrice=150, UnitsInStock=65},
              new Product{CategoryId=5, ProductId=2, ProductName="Fare", UnitPrice=85, UnitsInStock=1}
-            };
+            };      
         }
 
         public void Add(Product product)
@@ -40,6 +40,7 @@ namespace DataAccess.Concrete.InMemory
             return _products;
         }
 
+
         public void Update(Product product)
         {
             //Gönderdiğim ürün id'sine sahip olan listedeki ürünü bul
@@ -54,6 +55,7 @@ namespace DataAccess.Concrete.InMemory
 
         public List<Product> GetAllByCategory(int categoryId)
         {
+            //Where koşulu içindeki şarta uyan bütün elemanları yeni bir liste haline getirip onu döndürür
             return _products.Where(p => p.CategoryId == categoryId).ToList();
         }
 

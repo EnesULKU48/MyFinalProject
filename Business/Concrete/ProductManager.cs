@@ -10,6 +10,7 @@ namespace Business.Concrete
 {
     public class ProductManager : IProductService
     {
+        //bir iş sınıfı başka sınıfları new'lemez
         IProductDal _ProductDal;
 
         public ProductManager(IProductDal productDal)
