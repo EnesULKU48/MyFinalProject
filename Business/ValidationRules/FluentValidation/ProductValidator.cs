@@ -8,10 +8,10 @@ namespace Business.ValidationRules.FluentValidation
 {
     public class ProductValidator : AbstractValidator<Product>
     {
-        //StartWithA kendimiz metot yaptık
+        //StartWithA kendimiz metot yaptık  ve ctor içine yazdık
         public ProductValidator()
         {
-            RuleFor(p => p.ProductName).NotEmpty();
+            RuleFor(p => p.ProductName).NotEmpty();//boş olamaz
             RuleFor(p => p.ProductName).MinimumLength(2);
             RuleFor(p => p.UnitPrice).NotEmpty();
             RuleFor(p => p.UnitPrice).GreaterThan(0);
@@ -20,6 +20,7 @@ namespace Business.ValidationRules.FluentValidation
 
         }
 
+        //arg orada productName
         private bool StartWithA(string arg)
         {
             return arg.StartsWith("A");
