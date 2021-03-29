@@ -15,7 +15,7 @@ namespace Core.Utilities.Security.Hashing
                 passwordSalt = hmac.Key;//ilgili kullandımız algoritmanın keyi ve herkullanıcı için newleni
                 passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
-        }
+        }   
 
    //kullanıcı giriş yaparken bizim verdiğimiz hashla eşleşiyor mu    kullanıcının girdiği password  
         public static bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
@@ -32,6 +32,7 @@ namespace Core.Utilities.Security.Hashing
                 }
                 return true;
             }
+
         }
     }
 }

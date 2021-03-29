@@ -14,11 +14,12 @@ namespace Core.Utilities.Security.JWT
 {
     public class JwtHelper : ITokenHelper
     {
-        //bizim apideki appsettingdeki değerleri okumaya yarar
+        
         public IConfiguration Configuration { get; }
         private TokenOptions _tokenOptions;//bir nesneye oluşturuyor
         private DateTime _accessTokenExpiration;//accessToken ne zaman geçersizleşecek
 
+        //bizim apideki appsettingdeki değerleri okumaya yarar
         public JwtHelper(IConfiguration configuration)
         {
             Configuration = configuration;

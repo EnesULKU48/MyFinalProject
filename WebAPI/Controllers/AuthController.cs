@@ -12,7 +12,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class AuthController : Controller
     {
-        private IAuthService _authService;
+        private     IAuthService _authService;
 
         public AuthController(IAuthService authService)
         {
@@ -36,6 +36,7 @@ namespace WebAPI.Controllers
 
             return BadRequest(result.Message);
         }
+
 
         [HttpPost("register")]
         public ActionResult Register(UserForRegisterDto userForRegisterDto)
